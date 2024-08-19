@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  backend:
+    container_name: backend
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/user/app
+      - /user/app/node_modules
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres_db
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - vectigal_pg_data:/var/lib/postgresql/data
+
+volumes:
+  vectigal_pg_data:

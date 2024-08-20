@@ -8,4 +8,8 @@ export default defineConfig({
     host: true,
     port: 8080,
   },
+  hmr: {
+    host: "localhost",
+    port: 8080,
+  },
 });

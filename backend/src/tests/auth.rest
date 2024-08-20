@@ -1,0 +1,23 @@
+### 
+POST http://localhost:3000/auth/sign-up 
+Content-Type: application/json
+
+{
+    "username":"andre",
+    "email":"andre@mail.com",
+    "password":"Garfa12345",
+    "confirm-password":"Garfa12345"
+}
+
+### 
+POST http://localhost:3000/auth/log-in
+Content-Type: application/json
+
+{
+    "username":"andre",
+    "password":"Garfa12345"
+}
+
+###
+GET http://localhost:3000/auth/
+Authorization: Bearer eyJhbGciOiJIUzaI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbmRyZSIsImVtYWlsIjoiYW5kcmVAbWFpbC5jb20iLCJpYXQiOjE3MjQxNzA2NTEsImV4cCI6MTcyNDM0MzQ1MX0.KEt0wNQp1IZHwaB-Gz3uJ1BwHNQnY2EUtXC6plQivGE

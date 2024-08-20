@@ -1,10 +1,12 @@
-const app = require("express")();
+const express = require("express");
 require("dotenv").config();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!!!!");
-});
+const app = express();
 
-app.listen(process.env.PORT, process.env.HOST, () => {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+app.listen(process.env.PORT, "0.0.0.0", () => {
   console.log("Server started");
 });

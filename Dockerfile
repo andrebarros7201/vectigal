@@ -1,5 +1,5 @@
-FROM node:latest
-WORKDIR /user/app
+FROM node:22
+WORKDIR /user/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .

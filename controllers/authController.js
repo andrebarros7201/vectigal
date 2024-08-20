@@ -141,15 +141,16 @@ exports.logIn = [
             console.error(err);
             return res.status(500).json({ message: "Internal Server Error" });
           }
-
           res.cookie("jwt_token", token, {
             maxAge: 1000 * 60 * 60,
             httpOnly: true,
           });
 
-          return res
-            .status(200)
-            .json({ message: "User logged in successfully", token });
+          return res.status(200).json({
+            message: "User logged in successfully",
+            token,
+            user: payload,
+          });
         }
       );
     } catch (error) {

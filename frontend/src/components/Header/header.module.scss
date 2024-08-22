@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,97 @@
+$primary-color: #003b5c; // Navy Blue
+$secondary-color: #800020; // Rich Burgundy
+$success-color: #2f8f2f; // Emerald Green
+$danger-color: #c0392b; // Burgundy
+$warning-color: #f5a623; // Muted Orange
+$light-color: #f4f4f4; // Light Gray
+$dark-color: #3e3e3e; // Charcoal Gray
+$text-color: #f9f9f9; // Neutral Gray
+
+@mixin button-styles(
+  $bg-color,
+  $text-color: $text-color,
+  $hover-bg-color: darken($bg-color, 10%)
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba($bg-color, 0.5);
+  }
+
+  &:active {
+    background-color: darken($bg-color, 20%);
+    transform: scale(0.98);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  &:disabled {
+    background-color: lighten($bg-color, 15%);
+    color: $light-color;
+    cursor: not-allowed;
+  }
+}
+
+.btn {
+  @include button-styles($light-color, $dark-color, darken($light-color, 10%));
+
+  &.btn-primary {
+    @include button-styles($primary-color);
+  }
+
+  &.btn-secondary {
+    @include button-styles($secondary-color);
+  }
+
+  &.btn-success {
+    @include button-styles($success-color);
+  }
+
+  &.btn-danger {
+    @include button-styles($danger-color);
+  }
+
+  &.btn-warning {
+    @include button-styles($warning-color, $dark-color);
+  }
+
+  &.btn-light {
+    @include button-styles(
+      $light-color,
+      $dark-color,
+      darken($light-color, 10%)
+    );
+  }
+
+  &.btn-dark {
+    @include button-styles($dark-color);
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    color: currentColor;
+
+    &:hover {
+      background-color: currentColor;
+      color: $light-color;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../styles/colors";
+
+$input-background-color: $text-color;
+$font-size: 0.875rem;
+
+.errors {
+  display: flex;
+  flex-flow: column nowrap;
+  color: $secondary-color;
+
+  p {
+    margin: 0;
+  }
+}

@@ -6,7 +6,9 @@ export default function Header() {
   return (
     <header className={styles["header"]}>
       <h2>
-        <em>Vectigal</em>
+        <NavLink to={"/"}>
+          <em>Vectigal</em>{" "}
+        </NavLink>
       </h2>
       <nav>
         <NavLink to={"/sign-up"}>

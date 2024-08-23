@@ -7,7 +7,6 @@ import axios from "axios";
 import styles from "./LogIn.module.scss";
 
 export default function LogIn() {
-  let otherErrors = null;
   const {
     setErrors,
     errors,
@@ -32,13 +31,6 @@ export default function LogIn() {
     setErrors(null);
   }, []);
 
-  useEffect(() => {
-    if (errors)
-      otherErrors = errors.filter(
-        (x) => x.path !== "username" && x.path !== "password"
-      );
-  }, [errors]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const { username, password } = data;
@@ -57,6 +49,7 @@ export default function LogIn() {
         user = res.data.user;
         setToken(token);
         setUser(user);
+        navigate("/dashboard");
       })
       .catch((errors) => {
         setErrors(errors.response.data.errors);

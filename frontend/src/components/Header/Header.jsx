@@ -7,7 +7,7 @@ export default function Header() {
     <header className={styles["header"]}>
       <h2>
         <NavLink to={"/"}>
-          <em>Vectigal</em>{" "}
+          <em>Vectigal</em>
         </NavLink>
       </h2>
       <nav>

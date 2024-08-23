@@ -1,5 +1,6 @@
 import styles from "./header.module.scss";
 import Button from "../Button/Button";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -8,8 +9,12 @@ export default function Header() {
         <em>Vectigal</em>
       </h2>
       <nav>
-        <Button text={"Sign Up"} type={"primary"} />
-        <Button text={"Log in"} type={"secondary"} />
+        <NavLink to={"/sign-up"}>
+          <Button text={"Sign Up"} style={"primary"} />
+        </NavLink>
+        <NavLink to={"/log-in"}>
+          <Button text={"Log in"} style={"secondary"} />
+        </NavLink>
       </nav>
     </header>
   );

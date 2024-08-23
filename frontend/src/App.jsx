@@ -10,6 +10,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errors, setErrors] = useState(null);
+  const [token, setToken] = useState(null);
 
   return (
     <>
@@ -23,6 +24,8 @@ function App() {
           setIsLoading,
           errors,
           setErrors,
+          token,
+          setToken,
         }}
       >
         <Header />

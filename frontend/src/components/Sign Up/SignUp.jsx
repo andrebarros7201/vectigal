@@ -44,7 +44,7 @@ export default function SignUp() {
 
   return (
     <main className={styles["sign-up"]}>
-      <form className={styles["sign-form"]}>
+      <form className={styles.form}>
         <span>
           <label htmlFor={"username"}>Username</label>
           <input

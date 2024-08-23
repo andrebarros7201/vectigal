@@ -47,6 +47,7 @@ export default function LogIn() {
       .then((res) => {
         token = res.data.token;
         user = res.data.user;
+        setIsLoggedIn(true);
         setToken(token);
         setUser(user);
         navigate("/dashboard");

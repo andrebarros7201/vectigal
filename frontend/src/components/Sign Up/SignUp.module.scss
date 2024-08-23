@@ -1,0 +1,50 @@
+@import "../styles/colors";
+
+$border-radius: 8px;
+$input-padding: 0.75rem;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$transition-duration: 0.3s;
+$text-color: black;
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.sign-form {
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input {
+    border: 1px solid $dark-color;
+    padding: $input-padding;
+    border-radius: $border-radius / 2;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color $transition-duration ease;
+    background-color: #f9f9f9;
+    color: $text-color;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+}

@@ -1,13 +1,21 @@
 import styles from "./Button.module.scss";
 import PropTypes from "prop-types";
 
-export default function Button({ text, type }) {
+export default function Button({ text, style, type = "button", onClick }) {
   return (
-    <button className={`${styles.btn} ${styles[`btn-${type}`]}`}>{text}</button>
+    <button
+      type={type}
+      className={`${styles.btn} ${styles[`btn-${style}`]}`}
+      onClick={onClick}
+    >
+      {text}
+    </button>
   );
 }
 
-Button.propTypes={
+Button.propTypes = {
   text: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
-}
+  style: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
+};

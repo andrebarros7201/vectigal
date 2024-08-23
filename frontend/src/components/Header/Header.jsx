@@ -5,12 +5,14 @@ import { useContext } from "react";
 import { AppContext } from "../../App";
 
 export default function Header() {
-  const { isLoggedIn, setIsLoggedIn, token, setToken } = useContext(AppContext);
+  const { isLoggedIn, setIsLoggedIn, setToken, setUser } =
+    useContext(AppContext);
   const navigate = useNavigate();
 
   function handleLogout() {
     setIsLoggedIn(false);
     setToken(null);
+    setUser(null);
     navigate("/");
   }
 
